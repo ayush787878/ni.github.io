@@ -11,22 +11,28 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #000000;
+            background-color: #1b1b1b;
             font-family: Arial, sans-serif;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .container {
             position: relative;
-            width: 80%;
-            height: 80vh;
-            max-width: 500px; /* Limit maximum width */
-            max-height: 500px; /* Limit maximum height */
-            background-color: #000000;
-            border: 2px solid #000000;
+            width: 500px;
+            height: 500px;
+            background-color: #ffffff00;
             display: flex;
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            margin-bottom: 10%;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
         }
 
         .image-container {
@@ -40,24 +46,23 @@
         }
 
         .image-container img {
-            width: 20%; /* Adjust image size relative to the container */
-            height: auto; /* Maintain aspect ratio */
-            max-width: 150px; /* Limit maximum width */
-            max-height: 150px; /* Limit maximum height */
+            width: 150px;
+            height: 150px;
         }
 
         .spin {
-            animation: spin 2s linear infinite;
+            animation: spin 3s linear infinite;
         }
 
         .coin-counter {
             position: absolute;
-            top: 5%;
-            left: 5%;
+            top: 10px;
+            left: 10px;
             background-color: rgba(0, 0, 0, 0.7);
             color: #fff;
             padding: 10px;
             border-radius: 5px;
+            font-size: large;
         }
 
         .claim-animation {
@@ -66,8 +71,89 @@
             left: 50%;
             transform: translate(-50%, -50%);
             color: #ffffff;
-            font-size: 24px;
+            font-size: 15px;
             animation: claim 1s ease-out;
+        }
+
+        .container2 {
+            position: absolute;
+            top: 3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #555;
+            border-radius: 10px;
+            background-color: #111;
+        }
+
+        .wallet1 {
+            color: #fff;
+            margin-left: 42%;
+            font-weight: bold;
+            font-size: large;
+        }
+
+        .wallet {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+        }
+
+        .balance {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .send {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: #222;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Add menu bar styles */
+        .bottom-nav {
+            position: fixed;
+            bottom: 10px;
+            height: 50px;
+            width: 400px;
+            background-color: #474747;
+            color: #fff;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 20px;
+            z-index: 100;
+            border: 1px solid #ffffff;
+        }
+
+        .bottom-nav a {
+            text-decoration: none;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .bottom-nav img {
+            width: 32px;
+            height: 32px;
+            margin-bottom: 5px;
+        }
+
+        .bottom-nav span {
+            font-weight: bold;
+        }
+
+        .bottom-nav a:active {
+            transform: translateY(10px);
+            background-color: #242424d7;
+            border-radius: 50px;
         }
 
         @keyframes spin {
@@ -88,33 +174,181 @@
                 transform: translate(-50%, -50%) scale(2);
             }
         }
+
+        /* Starry Night Animation */
+        .sky {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            animation: blink 0s infinite ease-in-out, move 5s linear infinite;
+        }
+
+         .star:nth-child(1) { top: 80%; left: 10%; animation-duration: 3s, 5s; }
+        .star:nth-child(2) { top: 90%; left: 20%; animation-duration: 2.5s, 4s; }
+        .star:nth-child(3) { top: 85%; left: 30%; animation-duration: 2.8s, 6s; }
+        .star:nth-child(4) { top: 75%; left: 40%; animation-duration: 2.6s, 5s; }
+        .star:nth-child(5) { top: 80%; left: 50%; animation-duration: 2.7s, 6s; }
+        .star:nth-child(6) { top: 90%; left: 60%; animation-duration: 3.1s, 7s; }
+        .star:nth-child(7) { top: 85%; left: 70%; animation-duration: 3.2s, 6s; }
+        .star:nth-child(8) { top: 75%; left: 80%; animation-duration: 3s, 5s; }
+        .star:nth-child(9) { top: 80%; left: 90%; animation-duration: 2.9s, 6s; }
+        .star:nth-child(10) { top: 90%; left: 95%; animation-duration: 2.8s, 5s; }
+
+        .star:nth-child(11) { top: 70%; left: 5%; animation-duration: 3.5s, 6.5s; }
+        .star:nth-child(12) { top: 85%; left: 15%; animation-duration: 2.7s, 4.5s; }
+        .star:nth-child(13) { top: 75%; left: 25%; animation-duration: 2.9s, 5.5s; }
+        .star:nth-child(14) { top: 65%; left: 35%; animation-duration: 2.6s, 5.2s; }
+        .star:nth-child(15) { top: 78%; left: 45%; animation-duration: 3.1s, 6.1s; }
+        .star:nth-child(16) { top: 87%; left: 55%; animation-duration: 3.3s, 7.1s; }
+        .star:nth-child(17) { top: 72%; left: 65%; animation-duration: 2.8s, 5.8s; }
+        .star:nth-child(18) { top: 77%; left: 75%; animation-duration: 2.6s, 5.4s; }
+        .star:nth-child(19) { top: 83%; left: 85%; animation-duration: 3s, 6s; }
+        .star:nth-child(20) { top: 93%; left: 90%; animation-duration: 3.4s, 7s; }
+
+        .star:nth-child(21) { top: 68%; left: 12%; animation-duration: 2.7s, 5.7s; }
+        .star:nth-child(22) { top: 82%; left: 22%; animation-duration: 3.1s, 6.5s; }
+        .star:nth-child(23) { top: 78%; left: 32%; animation-duration: 2.9s, 5.6s; }
+        .star:nth-child(24) { top: 67%; left: 42%; animation-duration: 3s, 6.3s; }
+        .star:nth-child(25) { top: 81%; left: 52%; animation-duration: 2.8s, 5.2s; }
+        .star:nth-child(26) { top: 74%; left: 62%; animation-duration: 2.7s, 5.7s; }
+        .star:nth-child(27) { top: 79%; left: 72%; animation-duration: 3.3s, 6.8s; }
+        .star:nth-child(28) { top: 89%; left: 82%; animation-duration: 2.9s, 5.9s; }
+        .star:nth-child(29) { top: 91%; left: 87%; animation-duration: 3s, 6.4s; }
+        .star:nth-child(30) { top: 76%; left: 95%; animation-duration: 3.5s, 6.5s; }
+        @keyframes blink {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes move {
+            0% { transform: translateY(100vh); }
+            100% { transform: translateY(-100vh); }
+        }
     </style>
 </head>
 <body>
-    <div class="container" id="container">
-        <div class="coin-counter" id="coinCounter">Coins: 0</div>
-        <div class="image-container">
-            <img src="https://raw.githubusercontent.com/ayush787878/ni.github.io/main/images/fan.jpg" alt="Image 1" class="spin">
+    <div class="main-container">
+        <div class="container2">
+            <div class="wallet1">Wallet</div>
+            <div class="wallet">
+                <div class="balance" id="coinCounter">∞ $000</div>
+                <button class="send">Claim</button>
+            </div>
+        </div>
+
+        <div class="container" id="container">
+            <div class="image-container">
+                <img src="https://raw.githubusercontent.com/ayush787878/ni.github.io/main/images/fan.jpg" alt="Image 1" class="spin">
             <img src="https://raw.githubusercontent.com/ayush787878/ni.github.io/main/images/coin.png">
             <img src="https://raw.githubusercontent.com/ayush787878/ni.github.io/main/images/fan.jpg" alt="Image 3" class="spin">
+            </div>
+            <!-- Starry Night Animation -->
+            <div class="sky">
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+            </div>
         </div>
+
+        <!-- Add menu bar -->
+        <div class="bottom-nav">
+            <a href="#">
+                <img src="https://cdn3d.iconscout.com/3d/premium/thumb/pickaxe-11321508-9067098.png?f=webp" alt="Mine">
+                <span>Mine</span>
+            </a>
+            <a href="#">
+                <img src="https://cdn3d.iconscout.com/3d/premium/thumb/user-11321524-9067097.png?f=webp" alt="Friends">
+                <span>Friends</span>
+            </a>
+            <a href="#">
+                <img src="https://cdn3d.iconscout.com/3d/premium/thumb/parachute-11321511-9067099.png?f=webp" alt="Airdrop">
+                <span>Airdrop</span>
+            </a>
+            <a href="#">
+                <img src="https://cdn3d.iconscout.com/3d/premium/thumb/wallet-11321515-9067100.png?f=webp" alt="Wallet">
+                <span>Wallet</span>
+                
+            </a>
+        </div>
+
     </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const container = document.getElementById('container');
             const coinCounter = document.getElementById('coinCounter');
-            let coins = 0;
+            let coins = parseInt(localStorage.getItem('coins')) || 0;
+            let multiTapAllowed = coins >= 200;
 
-            container.addEventListener('click', (event) => {
-                coins++;
-                coinCounter.textContent = `Coins: ${coins}`;
-                showClaimAnimation(event.clientX, event.clientY);
-            });
+            // Check for bonus coins from join.html
+            const bonusCoins = localStorage.getItem('bonusCoins');
+            if (bonusCoins) {
+                coins += parseInt(bonusCoins);
+                localStorage.removeItem('bonusCoins'); // Remove bonus coins after adding
+            }
 
-            function showClaimAnimation(x, y) {
+            // Update coin counter display
+            function updateCoinCounter() {
+                coinCounter.textContent = `∞ ${coins}`;
+            }
+
+            // Increment coins by 1
+            function incrementCoins(amount = 1) {
+                coins += amount;
+                localStorage.setItem('coins', coins);
+                updateCoinCounter();
+                checkMultiTapAllowed();
+            }
+
+            // Check if multitap is allowed
+            function checkMultiTapAllowed() {
+                if (coins >= 200 &&!multiTapAllowed) {
+                    multiTapAllowed = true;
+                    container.style.cursor = 'pointer';
+                }
+            }
+
+            // Show coin claim animation
+            function showClaimAnimation(x, y, amount = 1) {
                 const claimAnimation = document.createElement('div');
                 claimAnimation.classList.add('claim-animation');
-                claimAnimation.textContent = '+1';
+                claimAnimation.textContent = `+${amount}`;
                 claimAnimation.style.left = `${x}px`;
                 claimAnimation.style.top = `${y}px`;
                 document.body.appendChild(claimAnimation);
@@ -122,6 +356,26 @@
                     claimAnimation.remove();
                 }, 1000);
             }
+
+            // Add click event to container
+            container.addEventListener('click', (event) => {
+                if (multiTapAllowed && event.shiftKey) {
+                    incrementCoins(2);
+                    showClaimAnimation(event.clientX - 20, event.clientY - 20, 2);
+                } else {
+                    incrementCoins();
+                    showClaimAnimation(event.clientX, event.clientY);
+                }
+            });
+
+            // Auto increment coins by 3 every second
+            setInterval(() => {
+                incrementCoins(3);
+            }, 1000);
+
+            // Initial update of the coin counter
+            updateCoinCounter();
+            checkMultiTapAllowed();
         });
     </script>
 </body>
